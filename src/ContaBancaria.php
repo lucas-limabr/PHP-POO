@@ -12,6 +12,17 @@ class ContaBancaria{
     private string $num_conta;
     private float $saldo;
 
+    //gambiarra que existe no PHP como forma aternativa para fazer sobrecarga de métodos, incluindo o método construtor. No PHP, o nome do método precisa ser único
+    public function __construct(string $banco = null, string $nome_titular = null, string $num_agencia = null, string $num_conta = null, $saldo = 0){
+        if($banco != null && $nome_titular != null && $num_agencia != null && $num_conta != null && $num_conta != null){
+        $this->banco = $banco;
+        $this->nome_titular = $nome_titular;
+        $this->num_agencia = $num_agencia;
+        $this->num_conta = $num_conta;
+        $this->saldo = $saldo;
+        }
+    }
+
     public function exibirDados():array{
         return [
             "Banco: " => $this->banco,
