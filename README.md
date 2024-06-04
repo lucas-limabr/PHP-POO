@@ -1,1 +1,1 @@
-# PHP-POO
+### Este é um repositório de códigos em PHP com o paradigma de Orientação à Objetos. Neste projeto eu pude aprender mais sobre a sintaxe da linguagem, bem como, aperfeiçoar e aplicar conceitos de POO que eu já conhecia e tinha praticado em Java. Neste projeto eu utilizei o Composer, para auxiliar e facilitar o uso de classes em meu projeto através do autoload.php 
