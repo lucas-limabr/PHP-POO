@@ -14,7 +14,31 @@ $c1 = new ContaBancaria(
 
 $c1->setSaldo(100.8);
 
-print_r($c1->exibirDados());
-echo $c1->getBanco();
+$saque = 200.0;
+if ($c1->sacar($saque)) {
+    echo'Saque realizado com sucesso';
+}
+else{
+    echo 'Dinheiro insuficiente na conta para fazer o saque';
+}
+echo PHP_EOL;
 
-$c2 = new ContaBancaria('Banco');
+$deposito = 100.2;
+if ($c1->depositar($deposito)) {
+    echo"Deposito de R\$ $deposito realizado com sucesso"; 
+}
+else{
+    echo 'O depósito precisa ser maior que zero reais';
+}
+echo PHP_EOL;
+
+if ($c1->sacar($saque)) {
+    echo"Saque de R\$ $saque realizado com sucesso";
+}
+else{
+    echo 'Dinheiro insuficiente na conta para fazer o saque';
+}
+echo PHP_EOL;
+
+print_r($c1->exibirDados());
+
