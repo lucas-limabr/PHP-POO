@@ -5,9 +5,11 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Interfaces\DadosConta;
+use App\Interfaces\OperacoesConta;
 use DateTime;
 
-abstract class ContaBancaria
+abstract class ContaBancaria implements DadosConta, OperacoesConta 
 {
     private string $banco;
     private string $nome_titular;
@@ -15,7 +17,6 @@ abstract class ContaBancaria
     private string $num_conta;
     private float $saldo;
     private $data_atual;
-
     protected String $data_abertura;
 
     public function __construct(string $banco, string $nome_titular, string $num_agencia, string $num_conta, float $saldo, string $data_abertura)
@@ -64,7 +65,6 @@ abstract class ContaBancaria
         return false;
     }
 
-    //getters and setters
     protected function getDataAtual(): DateTime
     {
         //zerando a hora, minutos e segundos
@@ -94,13 +94,14 @@ abstract class ContaBancaria
             return 0;
         }
     }
-
+    
+    //getters and setters
     public function getBanco(): string
     {
         return $this->banco;
     }
 
-    protected function getSaldo(): float
+    public function getSaldo(): float
     {
         return $this->saldo;
     }
@@ -116,6 +117,10 @@ abstract class ContaBancaria
     public function getConta(): string
     {
         return $this->num_conta;
+    }
+
+    public function getDataAbertura():string{
+        return $this->data_abertura;
     }
 
     public function setBanco(string $banco): void

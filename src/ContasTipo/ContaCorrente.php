@@ -31,7 +31,7 @@ class ContaCorrente extends ContaBancaria
                 $this->setSaldo($taxa_aplicada);
             }
 
-            echo $this->getNome() . ', seu saldo é de R$' . number_format($this->getSaldo(), 2, ',', '.');
+            echo $this->getNome() . ', seu saldo é de R$' . number_format($this->getSaldo(), 2, ',', '.') . "\n";
         }
     }
 }
