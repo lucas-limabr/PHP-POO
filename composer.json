@@ -1,0 +1,17 @@
+{
+    "name": "lucas/php-poo",
+    "description": "Estudo de POO com auxílio do Composer",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucas Lima",
+            "email": "lucaslimamg28@gmail.com"
+        }
+    ],
+    "require": {}
+}
